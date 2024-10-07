@@ -4,8 +4,9 @@ import {Route, Routes, useLocation, useSearchParams} from "react-router-dom"
 import Home from './pages/Home';
 import { useContext, useEffect } from 'react';
 import { AppContext } from './context/AppContext';
+import Cart from './pages/Cart';
 
-function App() {
+export default function App() {
   const {fetchItems} = useContext(AppContext)
 
   const [serchParams, setSearchParams] = useSearchParams()
@@ -22,12 +23,10 @@ function App() {
     }
   },[location.pathname, location.search])
   return (
-    <div className="App">
      <Routes>
-      <Route path='/' element={Home}/>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/cart' element={<Cart/>} />
      </Routes>
-    </div>
   );
 }
 
-export default App;

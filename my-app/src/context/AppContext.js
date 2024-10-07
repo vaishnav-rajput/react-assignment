@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createContext , useState} from 'react'
 import { baseUrl } from '../baseUrl'
 
@@ -8,6 +8,8 @@ export default function AppContextProvider({children}) {
   const [items, setItems] = useState([])
   const [ cartItems, setCartItems] = useState([])
   const [loading, setLoading] = useState(false)
+
+  
 
   const fetchItems = async (category) => {
     setLoading(true)

@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Align items on the far ends */
+    align-items: center;
+    background-color: #333; /* Darkish background */
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6)
+}
+
+.navbar .site-name {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .cart {
+    color: white;
+    font-size: 1.5rem;
+    display: flex ;
+    align-items: center;
+    gap: 20px;
+}
+
+.searcher{
+    display: flex;
+    align-items: center;
+}
