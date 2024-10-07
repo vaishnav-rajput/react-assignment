@@ -26,3 +26,9 @@
     align-items: center;
     gap: 10px;
 }
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px ;
+}

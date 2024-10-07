@@ -9,6 +9,7 @@ export default function AppContextProvider({children}) {
   const [ cartItems, setCartItems] = useState([])
   const [loading, setLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [token, setToken] = useState(null)
   
   
 
@@ -48,7 +49,9 @@ export default function AppContextProvider({children}) {
     setLoading,
     fetchItems,
     isLoggedIn,
-    setIsLoggedIn
+    setIsLoggedIn,
+    token,
+    setToken
   }
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
