@@ -1,0 +1,39 @@
+.form-container {
+    max-width: 500px;  /* Set a max width for the form */
+    margin: 20px auto; /* Center the form horizontally */
+    padding: 20px;
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+
+input,
+textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 8px; /* Padding for inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+}
+
+button {
+    padding: 10px 15px; /* Padding for the button */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color for button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

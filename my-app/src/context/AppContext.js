@@ -8,7 +8,8 @@ export default function AppContextProvider({children}) {
   const [items, setItems] = useState([])
   const [ cartItems, setCartItems] = useState([])
   const [loading, setLoading] = useState(false)
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  
   
 
   const fetchItems = async (category) => {
@@ -25,6 +26,12 @@ export default function AppContextProvider({children}) {
             throw new Error("Something Went Wrong");
         console.log("api res" , data)
         setItems(data)
+        if(localStorage.getItem("newItem")){
+            const newItem = localStorage.getItem("newItem")
+            // console.log("new item to add ", JSON.parse(newItem))
+            console.log("new item to add ", newItem)
+            items.push(newItem)
+        }
     } catch (error) {
         console.log("Error in Fetching products", error);
         setItems([]);
@@ -40,6 +47,8 @@ export default function AppContextProvider({children}) {
     loading,
     setLoading,
     fetchItems,
+    isLoggedIn,
+    setIsLoggedIn
   }
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

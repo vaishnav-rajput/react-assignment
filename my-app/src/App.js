@@ -5,9 +5,10 @@ import Home from './pages/Home';
 import { useContext, useEffect } from 'react';
 import { AppContext } from './context/AppContext';
 import Cart from './pages/Cart';
+import AddProduct from './pages/addproduct/AddProduct';
 
 export default function App() {
-  const {fetchItems} = useContext(AppContext)
+  const {fetchItems, items} = useContext(AppContext)
 
   const [serchParams, setSearchParams] = useSearchParams()
   const location = useLocation()
@@ -21,11 +22,18 @@ export default function App() {
     else{
       fetchItems()
     }
+    
+    if(localStorage.getItem("newItem")){
+      const newItem = localStorage.getItem("newItem")
+      console.log("new item to add ", newItem)
+      items.push(newItem)
+  }
   },[location.pathname, location.search])
   return (
      <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/cart' element={<Cart/>} />
+      <Route path='/addproduct' element={<AddProduct/>} />
      </Routes>
   );
 }

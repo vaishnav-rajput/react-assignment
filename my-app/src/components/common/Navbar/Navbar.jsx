@@ -27,7 +27,12 @@ const Navbar = () => {
   return (
 
       <nav class="navbar">
-            <div class="site-name">YourBasket</div>
+        <Link to={"/"}>
+            <div class="site-name">YourBasket</div></Link>
+            <Link to={"/addproduct"}>
+            <div >Add Products</div>
+
+            </Link>
 
             <div class="cart">
               <div className='searcher'>
