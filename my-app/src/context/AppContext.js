@@ -11,8 +11,6 @@ export default function AppContextProvider({children}) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [token, setToken] = useState(null)
   
-  
-
   const fetchItems = async (category) => {
     setLoading(true)
     let url = `${baseUrl}`;
