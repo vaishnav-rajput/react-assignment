@@ -51,8 +51,9 @@ const Navbar = () => {
         }
       )
       const loginResponse = await response.json()
-      setToken(loginResponse)
-      console.log("token", token)
+      console.log("login response", loginResponse.token)
+      const stringRes = JSON.stringify(loginResponse.token)
+      setToken(stringRes)
       setModal(false)
       setLoading(false)
     } catch (error) {
