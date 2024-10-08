@@ -5,6 +5,7 @@ import Navbar from '../../components/common/Navbar/Navbar'
 import { AppContext } from '../../context/AppContext'
 import { baseUrl } from '../../baseUrl'
 import { useNavigate } from 'react-router-dom'
+import Sidebar from '../../components/common/sidebar/Sidebar'
 
 const AddProduct = () => {
     const {register, handleSubmit, setValue, formState: {errors}, getValues} = useForm()
@@ -45,6 +46,8 @@ const AddProduct = () => {
 
   return (
     <>
+      <Sidebar/>
+
     <Navbar/>
     <div class="form-container">
     <form onSubmit={handleSubmit(addProductHandler)}>

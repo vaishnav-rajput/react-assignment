@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../components/common/Navbar/Navbar'
 import "./Cart.css"
 import { AppContext } from '../context/AppContext'
+import Sidebar from '../components/common/sidebar/Sidebar'
 
 const Cart = () => {
     const {cartItems,setCartItems} = useContext(AppContext)
@@ -22,6 +23,8 @@ const Cart = () => {
     },[cartItems])
   return (
     <div>
+      <Sidebar/>
+
       <Navbar/>
       <section className='cart-section'>
         <div className='cart-container'> 

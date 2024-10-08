@@ -6,6 +6,7 @@ import { useContext, useEffect } from 'react';
 import { AppContext } from './context/AppContext';
 import Cart from './pages/Cart';
 import AddProduct from './pages/addproduct/AddProduct';
+import Sidebar from './components/common/sidebar/Sidebar';
 
 export default function App() {
   const {fetchItems, items} = useContext(AppContext)
@@ -30,11 +31,13 @@ export default function App() {
   }
   },[location.pathname, location.search])
   return (
+    <>
      <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/cart' element={<Cart/>} />
       <Route path='/addproduct' element={<AddProduct/>} />
      </Routes>
+     </>
   );
 }
 

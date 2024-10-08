@@ -21,6 +21,10 @@
     gap: 20px;
 }
 
+.cart-icon {
+    color: white;
+}
+
 .searcher{
     display: flex;
     align-items: center;
@@ -32,3 +36,34 @@
     flex-direction: column;
     gap: 30px ;
 }
+
+.side-bar{
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .side-bar{
+        display: block;
+        position: relative;
+        left: 0;
+    }
+
+    .login{
+        display: none;
+    }
+
+    .add-products{
+        display: none;
+    }
+
+    .cart-icon{
+        display: none;
+    }
+
+    .navbar .site-name {
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+

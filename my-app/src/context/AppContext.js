@@ -10,6 +10,8 @@ export default function AppContextProvider({children}) {
   const [loading, setLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [token, setToken] = useState(null)
+  const [sideBar, setSideBar] = useState(false);
+
   
   const fetchItems = async (category) => {
     setLoading(true)
@@ -49,7 +51,9 @@ export default function AppContextProvider({children}) {
     isLoggedIn,
     setIsLoggedIn,
     token,
-    setToken
+    setToken,
+    sideBar,
+    setSideBar
   }
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

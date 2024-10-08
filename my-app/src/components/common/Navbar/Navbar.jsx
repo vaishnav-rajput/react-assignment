@@ -5,10 +5,12 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../../context/AppContext';
 import CustBtn from '../button/CustBtn';
 import { get, useForm } from 'react-hook-form';
+import { RiLayoutHorizontalFill } from "react-icons/ri";
+import Sidebar from '../sidebar/Sidebar';
 
 const Navbar = () => {
   const navigate = useNavigate()
-  const {fetchItems, isLoggedIn, setIsLoggedIn, token,setToken,setLoading } = useContext(AppContext)
+  const {fetchItems, isLoggedIn, setIsLoggedIn, token ,setToken ,setLoading , sideBar, setSideBar} = useContext(AppContext)
   const {register, handleSubmit, setValue, formState: {errors}, getValues} = useForm()
   const [search, setSearch] = useState("")
   const [modal, setModal] = useState(false)
@@ -66,13 +68,20 @@ const Navbar = () => {
   return (
 
       <nav class="navbar">
+        {
+          // sidebar && 
+          <div className='side-bar' onClick={() => setSideBar(!sideBar)}>
+            <RiLayoutHorizontalFill color='white'  size={30} />
+          </div>
+        }
+        
             <Link to={"/"}>
             <div class="site-name">YourBasket</div>
             </Link>
             {
               !token ?
-              <CustBtn text={"Login"} onClick={() => setModal(true)}/> :
-              <CustBtn text={"Logout"} onClick={() => logoutHandler()}/>
+              <CustBtn className="login" text={"Login"} onClick={() => setModal(true)}/> :
+              <CustBtn className="login" text={"Logout"} onClick={() => logoutHandler()}/>
             }
             {
               modal &&
@@ -85,20 +94,22 @@ const Navbar = () => {
 
             {
               token &&
-              <Link to={"/addproduct"}>
-            <div >Add Products</div>
+              <Link to={"/addproduct"} style={{ color: 'white', textDecoration: 'none' }}>
+            <div className='add-products' >Add Products</div>
 
             </Link>
             }
             
 
-            <div class="cart">
+            <div className="cart">
               <div className='searcher'>
               <input type='text' name='search'  onChange={changeHandler} value={search} placeholder='search category'/>
               <button onClick={searchHandler }>search</button>
               </div>
             <Link to={"/cart"} >
-              <IoMdCart />
+            <div className='cart-icon'>
+              <IoMdCart  /> 
+              </div>
               </Link>
             </div>
         </nav>
